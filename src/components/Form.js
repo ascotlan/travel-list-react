@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Dropdown from "./Dropdown";
 
 export default function Form({handleItemList}) {
   const [description, setDescription] = useState("");
@@ -14,19 +15,17 @@ export default function Form({handleItemList}) {
     setDescription("");
   };
 
+  const handleQuantity = (selection) => {
+    setQuantity(selection);
+  };
+
+  const options = Array.from({ length: 20 }, (_, i) => i + 1);
+
   return (
     <form onSubmit={handleSubmit} className="add-form">
       <h3>What do you need for your 😍 trip?</h3>
-      <select
-        value={quantity}
-        onChange={(event) => setQuantity(parseInt(event.target.value))}
-      >
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-          <option key={num} value={num}>
-            {num}
-          </option>
-        ))}
-      </select>
+      <Dropdown value={quantity} onChange={handleQuantity} array={options} isInt={true}/>
+      
       <input
         onChange={(event) => setDescription(event.target.value)}
         value={description}

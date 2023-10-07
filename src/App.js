@@ -26,6 +26,8 @@ function App() {
     } else {
       setCheck([...checked, checkedItem]);
     }
+
+    setItems(items.map((item) => item.id === checkedItem.id ? {...item, packed: !isChecked} : item))
   };
 
   const handleDelete = (id) => {
@@ -39,7 +41,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <Logo />
       <Form handleItemList={handleItemList} />
       <PackingList
