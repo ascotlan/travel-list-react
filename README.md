@@ -1,5 +1,5 @@
 # Travel List App
-This simple application creates a travel list. It does not persist the data but it does illustrate different attributes of state management and data sorting with custom hooks. 
+This simple React application creates a travel list. It does not persist the data but it does illustrate different attributes of state management and data sorting with custom hooks. 
 
 ## Screenshot
 ![Homepage](docs/screenshot.png 'Homepage')
